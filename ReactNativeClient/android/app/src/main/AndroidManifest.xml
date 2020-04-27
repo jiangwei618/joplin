@@ -9,7 +9,8 @@
 	<uses-permission android:name="android.permission.CAMERA" />
 	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 	<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-	<uses-permission android:name="android.permission.READ_PHONE_STATE" tools:node="remove"/>
+	//自己发布andrio签名
+	<!-- <uses-permission android:name="android.permission.READ_PHONE_STATE" tools:node="remove"/> -->
 
 	<!-- ============================= -->
 	<!-- START RN-push-notitication    -->

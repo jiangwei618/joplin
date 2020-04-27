@@ -3,11 +3,13 @@
 buildscript {
     ext {
         buildToolsVersion = "28.0.3"
-        minSdkVersion = 16
+        minSdkVersion = 28
         compileSdkVersion = 28
         targetSdkVersion = 28
     }
     repositories {
+        maven{url 'http://maven.aliyun.com/nexus/content/groups/public/'}
+        maven { url "https://jitpack.io" }
         jcenter()
         google()
     }
@@ -21,6 +23,7 @@ buildscript {
 
 allprojects {
     repositories {
+        maven{url 'http://maven.aliyun.com/nexus/content/groups/public/'}
         mavenLocal()
         maven { url "https://jitpack.io" }
         maven {

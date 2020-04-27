@@ -36,6 +36,10 @@ const plugins = {
 	multitable: { module: require('markdown-it-multimd-table'), options: { multiline: true, rowspan: true, headerless: true } },
 	toc: { module: require('markdown-it-toc-done-right'), options: { listType: 'ul', slugify: uslugify } },
 	expand_tabs: { module: require('markdown-it-expand-tabs'), options: { tabWidth: 4 } },
+	plantuml: { module: require('markdown-plantuml-plantuml') ,options: {
+		openMarker: '```plantuml',
+		closeMarker: '```',
+	} } ,
 };
 const defaultNoteStyle = require('./defaultNoteStyle');
 
