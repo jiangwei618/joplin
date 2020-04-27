@@ -7,7 +7,7 @@
     "linter-ci": "./node_modules/.bin/eslint --ext .js --ext .jsx --ext .ts --ext .tsx",
     "watch": "gulp watch",
     "build": "gulp build",
-    "postinstall": "cd Tools && npm i && cd .. && cd ReactNativeClient && npm i && cd .. && cd ElectronClient && npm i && cd .. && cd CliClient && npm i && cd .. && gulp build"
+    "postinstall": "cd Tools && npm i && cd .. && cd ReactNativeClient && npm i && cd .. && cd ElectronClient && npm install sqlite3 --build-from-source --arch=x64 --runtime=electron --target=7.1.14 --dist-url=https://atom.io/download/electron && npm install sqlite3 --build-from-source --arch=ia32 --runtime=electron --target=7.1.14 --dist-url=https://atom.io/download/electron && npm i && cd .. && cd CliClient && npm install sqlite3 --build-from-source --arch=x64 --runtime=electron --target=7.1.14 --dist-url=https://atom.io/download/electron && npm install sqlite3 --build-from-source --arch=ia32 --runtime=electron --target=7.1.14 --dist-url=https://atom.io/download/electron  && npm i && cd .. && gulp build"
   },
   "husky": {
     "hooks": {
