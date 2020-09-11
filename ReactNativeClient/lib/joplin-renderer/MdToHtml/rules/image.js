@@ -21,9 +21,9 @@ function installRule(markdownIt, mdOptions, ruleOptions) {
 			if (token.content.split('=')[1]) {
 				const width = token.content.split('=')[1].split('*')[0];
 				const height = token.content.split('=')[1].split('*')[1];
-				return `<p class="graph-img" style="text-align: center;"><img data-from-md ${htmlUtils.attributesHtml(Object.assign({}, r, { title: titleStr }))} style="width:${width};height:${height}" /></p> <p class="graph-text" style="text-align: center">图：${titleStr}</p>`;
+				return `<p class="graph-img" "><img data-from-md ${htmlUtils.attributesHtml(Object.assign({}, r, { title: titleStr }))} style="width:${width};height:${height}" /></p> <p class="graph-text">图：${titleStr}</p>`;
 			}
-			return `<p class="graph-img" style="text-align: center;"><img data-from-md ${htmlUtils.attributesHtml(Object.assign({}, r, { title: titleStr }))}/></p> <p class="graph-text" style="text-align: center">图：${titleStr}</p>`;
+			return `<p class="graph-img" "><img data-from-md ${htmlUtils.attributesHtml(Object.assign({}, r, { title: titleStr }))}/></p> <p class="graph-text">图：${titleStr}</p>`;
 		}
 
 		return defaultRender(tokens, idx, options, env, self);
