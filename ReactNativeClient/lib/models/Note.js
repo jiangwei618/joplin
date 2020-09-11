@@ -232,9 +232,9 @@ class Note extends BaseItem {
 			r = noteFieldComp(a.user_created_time, b.user_created_time);
 			if (r) return r;
 
-			const titleA = a.title ? a.title.toLowerCase() : '';
-			const titleB = b.title ? b.title.toLowerCase() : '';
-			r = noteFieldComp(titleA, titleB);
+			const titleA = a.title ? a.title.split('.')[0].toLowerCase() : '';
+			const titleB = b.title ? b.title.split('.')[0].toLowerCase() : '';
+			r = noteFieldComp(parseInt(titleA) ,parseInt(titleB));
 			if (r) return r;
 
 			return noteFieldComp(a.id, b.id);
