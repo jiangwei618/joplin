@@ -424,6 +424,10 @@ class BaseApplication {
 
 		const result = next(action);
 		const newState = store.getState();
+		let newNotes = newState.notes.slice();
+		newNotes = Note.sortNotes(newNotes, stateUtils.notesOrder(newState.settings), newState.settings.uncompletedTodosOnTop);
+		newState.notes = newNotes;
+
 		let refreshNotes = false;
 		let refreshFolders = false;
 		// let refreshTags = false;
