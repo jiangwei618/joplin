@@ -250,8 +250,18 @@ class Note extends BaseItem {
 				const order = orders[i];
 				let aProp = a[order.by];
 				let bProp = b[order.by];
-				if (typeof aProp === 'string') aProp = aProp.toLowerCase();
-				if (typeof bProp === 'string') bProp = bProp.toLowerCase();
+				if (typeof aProp === 'string' && order.by === 'title') {
+					aProp = parseInt(aProp.split('.')[0].toLowerCase());
+				} else if (typeof aProp === 'string') {
+					aProp = aProp.toLowerCase();
+				}
+
+				if (typeof bProp === 'string' && order.by === 'title') {
+					bProp = parseInt(bProp.split('.')[0].toLowerCase());
+				} else if (typeof bProp === 'string') {
+					bProp = bProp.toLowerCase();
+				}
+
 				if (aProp < bProp) r = +1;
 				if (aProp > bProp) r = -1;
 				if (order.dir == 'ASC') r = -r;
